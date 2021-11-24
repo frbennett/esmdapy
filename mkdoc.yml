@@ -1,0 +1,20 @@
+site_name: SPOTPY Documentation
+site_url: http://fb09-pasig.umwelt.uni-giessen.de/spotpy/
+site_description: The documentation of the Statistical Parameter Optimization Framework
+site_author: Tobias Houska
+
+repo_url: https://github.com/frbennett/esmdapy/
+edit_url: ""
+
+theme:
+    name: readthedocs
+
+#markdown_extensions: [mathjax]
+
+
+nav:
+    - Home: index.md
+    - Tutorial:
+        - Introduction: Theory.md
+
+    - License: license.md
