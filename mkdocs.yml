@@ -1,1 +1,8 @@
-site_name: My Docs
+site_name: ESMDAPY Documentation
+
+nav:
+    - Home: index.md
+    - Tutorial:
+        - Introduction: theory.md
+
+        
