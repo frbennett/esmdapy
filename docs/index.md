@@ -1,5 +1,11 @@
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
 # Welcome to ESMDAPY
-esmdapy is a program
+A Python implementation of the Ensemble Smoother with Multiple Data Assimilations (ES-MDA). 
+$$
+\prod_{i=0}^{5}x_{i}+\frac{a}{b}
+$$
+
+
 
 ## Purpose
 

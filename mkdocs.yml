@@ -1,8 +1,11 @@
 site_name: ESMDAPY Documentation
 
 nav:
-    - Home: index.md
-    - Tutorial:
+    - Quick Start: quick_start.md 
+    - User Guide:
         - Introduction: theory.md
+        - Quick Start: quick_start.md
+
+
 
         
