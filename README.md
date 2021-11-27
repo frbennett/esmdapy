@@ -1,6 +1,23 @@
-# es_py
-The ES-MDA 
+# esmdapy
+Python module implementing the flexible ensemble smoother with multiple data assimilations
 
+## Installation
 
-# References
-(1) Emerick, Alexandre A., and Albert C. Reynolds. 2013. “Ensemble Smoother with Multiple Data Assimilation.” _Computers & Geosciences_, Ensemble Kalman filter for data assimilation, 55 (June): 3–15. [https://doi.org/10.1016/j.cageo.2012.03.011](https://doi.org/10.1016/j.cageo.2012.03.011).
+```
+pip install https://github.com/frbennett/esmdapy/archive/main.zip
+```
+
+At this stage we haven't tagged releases so you just install from the latest version.
+To upgrade, uninstall the one you've got, then install again
+
+```
+pip uninstall -y esmdapy
+pip install https://github.com/frbennett/esmdapy/archive/main.zip 
+```
+
+Alternatively, clone the git repository and do a develop install.
+
+```
+python setup.py develop
+```
+
