@@ -2,8 +2,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 from scipy.stats import truncnorm
-from .tools import linalg
-from .tools import utils
+from .linalg import * 
+from .utils import * 
 import scipy.linalg as sla
 
 # Start of class second commit
@@ -294,7 +294,7 @@ class esmda(object):
                 km = covarianceDD + alpha*stdevD@stdevD
 
             print('Shape of Kalman matrix ', np.shape(km))
-            my_timer = utils.Timer()
+            my_timer = Timer()
             print("Starting Kalman matrix decomposition")
             my_timer.start()
             if self.scale:
@@ -302,10 +302,10 @@ class esmda(object):
                 inv_stdevD = np.diag(stdevD.diagonal()**-1)
                 I_N_n = np.identity(dLength)
                 C_tilde = inv_stdevD@km@inv_stdevD
-                C_tilde_inv = linalg.tinv(C_tilde, rank, type=self.inverse_type)
+                C_tilde_inv = tinv(C_tilde, rank, type=self.inverse_type)
                 km_inv = inv_stdevD@C_tilde_inv@inv_stdevD
             else:
-                km_inv= linalg.tinv(km, rank, type=self.inverse_type)
+                km_inv= tinv(km, rank, type=self.inverse_type)
 
                 
             my_timer.stop()   
