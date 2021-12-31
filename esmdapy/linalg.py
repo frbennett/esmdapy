@@ -30,6 +30,7 @@ def tsvd(a,rank):
     return u, s, v, value
 
 def tinv(a, rank, type='svd', power_iter=3):
+    print('Inverse type set to ', type)
 
     if type == 'tsvd':
         u, s, v, value = tsvd(a, rank)
@@ -38,7 +39,7 @@ def tinv(a, rank, type='svd', power_iter=3):
     if type == 'rtsvd':
         u, s, v, value = rtsvd(a, rank, power_iter = power_iter)
         pinverse = v.T @ np.diag(s**-1) @ u.T
-        print('Approx variance recovered after truncation ', value)
+        print('Approx variance recovered after rtsvd truncation ', value)
     if type == 'svd':
         pinverse, svd_rank = sla.pinvh(a, return_rank=True)
         print('Rank from full SVD = ', svd_rank)
