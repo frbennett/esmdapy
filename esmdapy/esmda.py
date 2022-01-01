@@ -299,7 +299,7 @@ class esmda(object):
             my_timer.start()
             if self.scale:
                 print("Scaling Kalman matrix")
-                inv_stdevD = np.diag(stdevD.diagonal()**-1)
+                inv_stdevD = np.diag(stdevD.diagonal()**-1.0)
                 I_N_n = np.identity(dLength)
                 C_tilde = inv_stdevD@km@inv_stdevD
                 C_tilde_inv = tinv(C_tilde, rank, type=self.inverse_type)
