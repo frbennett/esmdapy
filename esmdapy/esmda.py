@@ -272,11 +272,11 @@ class esmda(object):
             covarianceDD = deltaD@deltaD.T / (nEnsemble - 1.)
             covarianceEE = deltaE_tilde@deltaE_tilde.T / (nEnsemble-1.)
             ## My test
-            test = covarianceDD + covarianceEE + alpha*stdevD@stdevD
-            if np.allclose(test, test.T):
-                print(' matrix is symmmetric')
-            else: 
-                print(' matrix is not symmmetric')
+#            test = covarianceDD + covarianceEE + alpha*stdevD@stdevD
+#            if np.allclose(test, test.T):
+#                print(' matrix is symmmetric')
+#            else: 
+#                print(' matrix is not symmmetric')
               
             
 #            if Error_Model :
