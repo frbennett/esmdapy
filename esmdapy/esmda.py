@@ -294,7 +294,8 @@ class esmda(object):
                 km = covarianceDD + covarianceEE + alpha*stdevD@stdevD
             else :
                 km = covarianceDD + alpha*stdevD@stdevD
-
+                
+            print('ref point 5')
             print('Shape of Kalman matrix ', np.shape(km))
             my_timer = Timer()
             print("Starting Kalman matrix decomposition")
