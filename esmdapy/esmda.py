@@ -300,7 +300,9 @@ class esmda(object):
             my_timer = Timer()
             print("Starting Kalman matrix decomposition")
             my_timer.start()
+            print('ref point 6')
             if self.scale:
+                print('ref point 7')
                 print("Scaling Kalman matrix")
                 inv_stdevD = np.diag(stdevD.diagonal()**-1.0)
                 I_N_n = np.identity(dLength)
@@ -308,6 +310,7 @@ class esmda(object):
                 C_tilde_inv = tinv(C_tilde, rank, type=self.inverse_type)
                 km_inv = inv_stdevD@C_tilde_inv@inv_stdevD
             else:
+                print('ref point 8')
                 km_inv= tinv(km, rank, type=self.inverse_type)
 
                 
