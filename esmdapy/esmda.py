@@ -69,6 +69,8 @@ class esmda(object):
         es_data = pd.read_csv(self.data_file_name)
         dLength = len(es_data) #the length of the data d
         stdevD = np.diag(es_data['noise'].values)
+        stdevDinv = np.diag(1/es_data['noise'].values)
+        stdevDsqinv = np.diag(1/es_data['noise'].values**2)
 
         #Constants
         maxIter = self.maxIter
@@ -170,14 +172,14 @@ class esmda(object):
             #Choose value for alpha    
             Osum = 0
             for i in range(nEnsemble):
-                Osum += (dPrior[:,i] - d_obs).T@np.linalg.inv(stdevD@stdevD)@(dPrior[:,i] - d_obs) *1/nEnsemble * 1/(2*dLength)
+                Osum += (dPrior[:,i] - d_obs).T@stdevDsqinv@(dPrior[:,i] - d_obs) *1/nEnsemble * 1/(2*dLength)
         #    alpha = min([aFactor * Osum, maxAlpha])
-            alpha = Osum
-            alpha = the_as[p]
+        #    alpha = Osum
+        #    alpha = the_as[p]
             alpha = maxIter 
     
-            if (p==(maxIter-1)):
-                alpha = 1/(1-alpha_sum)
+        #    if (p==(maxIter-1)):
+        #        alpha = 1/(1-alpha_sum)
                 
             
         
