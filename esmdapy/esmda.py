@@ -261,15 +261,15 @@ class esmda(object):
             
         
              #Calculate Average and Covariance MD and Covariance DD
-
+            print('ref point 1')
             mAverage = np.average(mPrior, axis=1).reshape(mLength,1)
             dAverage = np.average(dPrior, axis=1).reshape(dLength,1)
             E_tildeAverage = np.average(E_tilde, axis=1).reshape(dLength,1)
-             
+            print('ref point 2')
             deltaD = dPrior -dAverage
             deltaM = mPrior -mAverage 
             deltaE_tilde = E_tilde -E_tildeAverage
-
+            print('ref point 3')
             covarianceMD = deltaM@deltaD.T / (nEnsemble - 1.)
             covarianceDD = deltaD@deltaD.T / (nEnsemble - 1.)
             covarianceEE = deltaE_tilde@deltaE_tilde.T / (nEnsemble-1.)
@@ -289,7 +289,7 @@ class esmda(object):
 #                deltaM = covarianceMD@linalg.tinv(covarianceDD + alpha*stdevD@stdevD, rank, type=self.inverse_type)@(obsData - dPrior)
 
 
-                
+            print('ref point 4')
             if Error_Model :
                 km = covarianceDD + covarianceEE + alpha*stdevD@stdevD
             else :
