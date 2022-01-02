@@ -71,6 +71,7 @@ class esmda(object):
         stdevD = np.diag(es_data['noise'].values)
         stdevDinv = np.diag(1/es_data['noise'].values)
         stdevDsqinv = np.diag(1/es_data['noise'].values**2)
+        stdevDsq = np.diag(es_data['noise'].values**2)
 
         #Constants
         maxIter = self.maxIter
@@ -291,9 +292,9 @@ class esmda(object):
 
             print('ref point 4')
             if Error_Model :
-                km = covarianceDD + covarianceEE + alpha*stdevD@stdevD
+                km = covarianceDD + covarianceEE + alpha*stdevDsq
             else :
-                km = covarianceDD + alpha*stdevD@stdevD
+                km = covarianceDD + alpha*stdevDsq
                 
             print('ref point 5')
             print('Shape of Kalman matrix ', np.shape(km))
