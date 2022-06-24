@@ -1,0 +1,12 @@
+README.rst
+setup.py
+esmdapy/__init__.py
+esmdapy/esmda.py
+esmdapy/linalg.py
+esmdapy/picp.py
+esmdapy/utils.py
+esmdapy.egg-info/PKG-INFO
+esmdapy.egg-info/SOURCES.txt
+esmdapy.egg-info/dependency_links.txt
+esmdapy.egg-info/requires.txt
+esmdapy.egg-info/top_level.txt
