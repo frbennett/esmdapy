@@ -43,6 +43,8 @@ def tinv(a, rank, type='svd', power_iter=3):
     if type == 'svd':
         pinverse, svd_rank = sla.pinvh(a, return_rank=True)
         print('Rank from full SVD = ', svd_rank)
+        
+    return pinverse
 
 
 def sub_space_inversion(Delta_D, F, rank):
@@ -59,6 +61,6 @@ def sub_space_inversion(Delta_D, F, rank):
 
     
     
-    return pinverse 
+ 
 
 
