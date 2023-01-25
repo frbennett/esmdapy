@@ -58,9 +58,3 @@ def sub_space_inversion(Delta_D, F, rank):
     Zx, Gamma, ZxT = np.linalg.svd(X, full_matrices=True, compute_uv=True, hermitian=True)
     pinverse = Ud@np.diag(Wd**-1)@Zx@(np.diag(np.diag(Ir+Gamma)**-1))@(Ud@np.diag(Wd**-1)@Zx).T
     return pinverse 
-
-    
-    
- 
-
-
