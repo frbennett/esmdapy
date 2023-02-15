@@ -43,18 +43,16 @@ def tinv(a, rank, type='svd', power_iter=3):
     if type == 'svd':
         pinverse, svd_rank = sla.pinvh(a, return_rank=True)
         print('Rank from full SVD = ', svd_rank)
-        
-    return pinverse
-
-
-def sub_space_inversion(Delta_D, F, rank):
-    Ud, Wd, Vd = np.linalg.svd(Delta_D, full_matrices=True, compute_uv=True, hermitian=False)
-    Ud = Ud[:, :rank]
-    Vd = Vd[:rank]
-    Wd = Wd[:rank]
-    r = Wd.size
-    Ir = np.diag(np.ones(r))
-    X = (np.diag(Wd**-1)@Ud.T@F@Ud@np.diag(Wd**-1))
-    Zx, Gamma, ZxT = np.linalg.svd(X, full_matrices=True, compute_uv=True, hermitian=True)
-    pinverse = Ud@np.diag(Wd**-1)@Zx@(np.diag(np.diag(Ir+Gamma)**-1))@(Ud@np.diag(Wd**-1)@Zx).T
+    
     return pinverse 
+
+def pseudo_inverse(del_D, alpha, Cd, nEnsemble, dLength, mLength, type='svd'):
+    if type == 'svd':
+        Cdd = (del_D@del_D.T)/(nEnsemble-1)
+        K = Cdd + alpha*Cd
+        Kinv, svd_rank = sla.pinvh(K, return_rank=True)
+        print('Rank : ', svd_rank)
+    return Kinv
+
+
+

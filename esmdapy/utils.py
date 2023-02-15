@@ -1,25 +1,25 @@
+import numpy as np
 
-import time
 
-class TimerError(Exception):
-    """A custom exception used to report errors in use of Timer class"""
+###################################################################################################
+# Routines for parameter transform
+###################################################################################################
+def logit(p):
+    return np.log(p) - np.log(1 - p)
 
-class Timer:
-    def __init__(self):
-        self._start_time = None
+def inv_logit(p):
+    return np.exp(p) / (1 + np.exp(p))
 
-    def start(self):
-        """Start a new timer"""
-        if self._start_time is not None:
-            raise TimerError(f"Timer is running. Use .stop() to stop it")
+def inverse_scale_param(P, a, b):
+    p_range = b - a
+    param = P  * p_range + a
+    return param
 
-        self._start_time = time.perf_counter()
+def transform(P, a, b):
+    in_log = inv_logit(P)
+#    parameter = inverse_transform_param(in_log, a, b)
+    return parameter
 
-    def stop(self):
-        """Stop the timer, and report the elapsed time"""
-        if self._start_time is None:
-            raise TimerError(f"Timer is not running. Use .start() to start it")
+def scale_param(P, a, b):
+    return (P-a)/(b-a)
 
-        elapsed_time = time.perf_counter() - self._start_time
-        self._start_time = None
-        print(f"Elapsed time: {elapsed_time:0.4f} seconds")
