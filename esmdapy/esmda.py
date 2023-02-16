@@ -19,6 +19,7 @@ class esmda(object):
         self.data_file_name = 'es_data.csv'
         self.nEnsemble = 100 #the number of ensembles
         self.maxIter = 10  #the number of iterations
+        self.inversion_type = 'svd'
 
         for key, value in kwargs.items():
             setattr(self, key, value)
@@ -132,7 +133,7 @@ class esmda(object):
             for i in range(self.dLength):
                 Cd[i,i] = self.observation_data.noise.values[i]**2
 
-            Kinv = pseudo_inverse(del_D, alpha, Cd, self.nEnsemble, self.dLength, self.mLength)
+            Kinv = pseudo_inverse(del_D, alpha, Cd, self.nEnsemble, self.dLength, self.mLength, self.inversion_type)
            # K = Cdd + alpha*Cd
            # Kinv, svd_rank = sla.pinvh(K, return_rank=True)
 
