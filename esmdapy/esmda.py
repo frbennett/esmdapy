@@ -6,8 +6,8 @@ import shutil
 from scipy.stats import truncnorm
 import scipy.linalg as sla
 
-from utils import *
-from linalg import *
+from .utils import *
+from .linalg import *
 
 
 class esmda(object):
@@ -78,6 +78,10 @@ class esmda(object):
         iteration_data = iteration_data.T 
         file_name = self.job_name + '_' + str(iter) + '_data.csv'
         iteration_data.to_csv(self.job_name + '/' + file_name)
+
+        print('Completed iteration ', iter)
+        print('============================')
+        print(' ')
 
 
     def run_esmda(self, fill_ensemble):

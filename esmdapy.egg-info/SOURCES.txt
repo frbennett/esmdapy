@@ -1,3 +1,4 @@
+LICENSE
 README.rst
 setup.py
 esmdapy/__init__.py

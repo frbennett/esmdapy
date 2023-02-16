@@ -15,10 +15,10 @@ def inverse_scale_param(P, a, b):
     param = P  * p_range + a
     return param
 
-def transform(P, a, b):
-    in_log = inv_logit(P)
+#def transform(P, a, b):
+#    in_log = inv_logit(P)
 #    parameter = inverse_transform_param(in_log, a, b)
-    return parameter
+#    return parameter
 
 def scale_param(P, a, b):
     return (P-a)/(b-a)

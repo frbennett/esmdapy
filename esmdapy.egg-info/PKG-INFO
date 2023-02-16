@@ -1,11 +1,8 @@
-Metadata-Version: 1.0
+Metadata-Version: 2.1
 Name: esmdapy
-Version: 0.1
+Version: 0.2
 Summary: Python implementation of the Flexible ES-MDA
-Home-page: UNKNOWN
 Author: Frederick Bennett
 Author-email: frederick.bennett@des.qld.gov.au
-License: UNKNOWN
-Description: UNKNOWN
 Keywords: ensemble smoother data assimilation
-Platform: UNKNOWN
+License-File: LICENSE
