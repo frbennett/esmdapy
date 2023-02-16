@@ -51,7 +51,7 @@ def pseudo_inverse(del_D, alpha, Cd, nEnsemble, dLength, mLength, type='svd'):
         Cdd = (del_D@del_D.T)/(nEnsemble-1)
         K = Cdd + alpha*Cd
         Kinv, svd_rank = sla.pinvh(K, return_rank=True)
-        print('Rank : ', svd_rank)
+    #    print('Rank : ', svd_rank)
     return Kinv
 
 
