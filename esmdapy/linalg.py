@@ -56,7 +56,7 @@ def pseudo_inverse(del_D, alpha, Cd, nEnsemble, dLength, mLength, type='svd'):
     
 
     if type == 'subspace' :
- #       def k_sub_space_inversion(Y, E, C, alpha):
+ #      Efficient subspace inversion
         N = del_D.shape[1]
         D = del_D/np.sqrt(N-1)
         F = alpha * Cd
