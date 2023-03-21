@@ -44,7 +44,7 @@ class esmda(object):
     def build_prior(self):
         """
         Generate an ensemble of logit transformed parameters by scaling truncnorm sampled parameters.
-        
+        add some more docstring
         """
         es_parameters = self.parameter_data.copy() 
         es_parameters['std'] = (es_parameters['upper'] - es_parameters['lower']) / es_parameters['width']
